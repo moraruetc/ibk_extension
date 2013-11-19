@@ -1,5 +1,10 @@
-<li class="current currency-RON non-clickable non-selectable">
+<% _.each([0,1,2,3,4], function(i) { %>
+
+ <li class="current currency-RON non-clickable non-selectable">
 	<a href="#"><span class="product-name">Suma</span></a>
 	<span class="available total"><%=amountEUR%></span>
 	<span class="current total"><%=amountRON%></span>	
-</li>
+</li> 
+
+
+<% }); %>
