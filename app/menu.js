@@ -1,4 +1,4 @@
-var moro_IBK = function(){
+var moro_MENU = function(){
 
 	function addMenuOption(){
 		var menu = '';

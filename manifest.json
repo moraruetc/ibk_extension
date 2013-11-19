@@ -9,7 +9,7 @@
       "css": ["style/basic.css"],
       "js": ["libs/jquery2.js",
             "libs/underscore.js",
-            "app/IBK.js",
+            "app/menu.js",
             "app/portfolio.js",
             "app/main.js"]
     }
