@@ -1,11 +1,13 @@
 var moro_PORTFOLIO = function(){
 
+	var clientData = {};
 
-	function getCurrencies(){
+
+	function parseCurrencies(){
 
 	}
 
-	function getCurrentAccounts(){
+	function parseCurrentAccounts(){
 		var amountEUR = 0;
 		var amountRON = 0;
   
@@ -21,28 +23,34 @@ var moro_PORTFOLIO = function(){
 		});
 	
 		amountEUR = amountEUR.toFixed(2);
-		amountRON = amountRON.toFixed(2);	
+		amountRON = amountRON.toFixed(2);		
 
-		var section = '';
-		var element = '';
-
-		$.when($.get(chrome.extension.getURL('templates/portfolio_section.tp')), $.get(chrome.extension.getURL('templates/portfolio_section_element.tp')))
-		.then(function(section, element){
-			$("#portfolio-accounts").append(section);
-			$("#portfolio-accounts").append(element);
-		});
+		clientData.amountEUR = amountEUR;
+		clientData.amountRON = amountRON;
   		
 	}
 
-	function getDeposits(){
+	function parseDeposits(){
 
+	}
+
+	function addTotals(){
+		$.when($.get(chrome.extension.getURL('templates/portfolio_section.tp')), $.get(chrome.extension.getURL('templates/portfolio_section_element.tp')))
+		.done(function(section, element){
+			$("#portfolio-accounts").append(section[0]);			
+			$("#portfolio-accounts").append( _.template(element[0], clientData));
+		});
 	}
 
 	return{
 		init:function(){
-			getCurrencies();
-			getCurrentAccounts();
-			getDeposits();
+			parseCurrencies();
+			parseCurrentAccounts();
+			parseCurrentAccounts();
+		}, 
+
+		addTotals:function(){
+			addTotals();
 		}
 	}
 }();

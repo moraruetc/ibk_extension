@@ -10,7 +10,7 @@
       "js": ["libs/jquery2.js",
             "libs/underscore.js",
             "app/IBK.js",
-            "app/portfolio_controller.js",
+            "app/portfolio.js",
             "app/main.js"]
     }
   ],

@@ -1,5 +1,5 @@
-<li class="current currency-RON">
-	<a href="#"><span class="product-name">monei</span></a>
-	<span class="current total">' + amountEUR + '</span>
-	<span class="available total">' + amountRON + '</span>
+<li class="current currency-RON non-clickable non-selectable">
+	<a href="#"><span class="product-name">Suma</span></a>
+	<span class="available total"><%=amountEUR%></span>
+	<span class="current total"><%=amountRON%></span>	
 </li>
