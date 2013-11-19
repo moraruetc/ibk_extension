@@ -11,7 +11,7 @@ $(document).ready(function() {
 			amountRON += parseFloat(text.replace('RON', ''));
 		}else if(text.indexOf('EUR') == 0){
 			amountEUR += parseFloat(text.replace('EUR', ''));
-			console.log(data);
+			//console.log(data);
 		}		
 	});
 	
@@ -24,8 +24,11 @@ $(document).ready(function() {
 	$.get('https://www.raiffeisenonline.ro/eBankingWeb/Controller?nextPage=deposit_details&AccountNumber=12588408&AccountType=20&ProductCode=546&AccountNickname=&Setup=[B@47564756', function(page){
 		console.log(page);
 	}, 'html');*/
-	
-	$.get(chrome.extension.getURL('templates/template.tp'), function(template) {
-     console.log( _.template(template, {name:"gigi"}));
+		
+	var menu = '';
+
+	$.get(chrome.extension.getURL('templates/menu_element.tp'), function(template) {
+     menu =  _.template(template, {name:"gigi"});
+     $('#menu').append(menu);
 	}, 'html');
 });

@@ -7,7 +7,7 @@
     {     
       "matches": ["https://www.raiffeisenonline.ro/*"],
       "css": ["style/basic.css"],
-      "js": ["libs/jquery2.js", "libs/underscore.js", "app/contentscript.js"]
+      "js": ["libs/jquery2.js", "libs/underscore.js", "app/IBK.js", "app/main.js"]
     }
   ],
   "web_accessible_resources" : ["templates/menu_element.tp"]
