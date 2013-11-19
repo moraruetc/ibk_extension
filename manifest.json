@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "IBK",
+  "version": "0.1",
+  "description": "AMOUNT COUNT",
+  "content_scripts": [
+    {     
+      "matches": ["https://www.raiffeisenonline.ro/*"],
+      "css": ["style/basic.css"],
+      "js": ["libs/jquery2.js", "libs/underscore.js", "app/contentscript.js"]
+    }
+  ],
+  "web_accessible_resources" : ["templates/menu_element.tp"]
+}

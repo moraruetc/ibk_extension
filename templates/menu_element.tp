@@ -1,0 +1,12 @@
+<li class="client">
+		
+			<a href="javascript:void(0);" class="modify-height"><span>client services icon</span> Servicii clienti</a>
+			<ul class="submenu">					 
+				<li class=""><a href="javascript:redirect('Controller?nextPage=modify_retailUserName&Setup=[B@3caa3caa&clear=true&selectedMenuUrl=modify_retailUserName')"><span>icon</span> Modificare cod utilizator</a></li>
+			
+				<li class=""><a href="javascript:redirect('Controller?nextPage=modify_email&Setup=[B@3caa3caa&clear=true&selectedMenuUrl=modify_email')"><span>icon</span> Modificare e-mail</a></li>
+			
+				<li class=""><a href="javascript:redirect('Controller?nextPage=manage_nicknames&Setup=[B@3caa3caa&clear=true&selectedMenuUrl=manage_nicknames')"><span>icon</span> Pseudonime cont</a></li>						
+			
+			</ul>
+</li>
