@@ -4,4 +4,8 @@
 			
 <div id="moro_chart1" style="height:300px; width:500px;"></div>		
 
+<div class="form-header selector-wrapper" tabindex="1">
+				<h2>Rapoarte Vizuale</h2>									
+</div>
+
 			
