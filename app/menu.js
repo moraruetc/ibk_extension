@@ -8,6 +8,16 @@ var moro_MENU = function(){
     		$('#menu').append(option);
 
     		$('#moro_get_more').click(function(){
+
+
+			$("#menu").find("ul").not(".active ul").not($(this).find("ul")).slideUp();
+			
+		
+
+    			$('#menu .active').removeClass('active');
+    			$('#moro_get_more').addClass('active');
+
+
     			$('#main').html('');
     			$.get(chrome.extension.getURL('templates/get_more.tp'), function(template) {
     				$('#main').html(template);
@@ -31,7 +41,7 @@ var data = [
     }
   );
 
-    				
+
    				}, 'html');
     		});
 
