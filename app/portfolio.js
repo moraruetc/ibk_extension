@@ -5,9 +5,36 @@ var moro_PORTFOLIO = function(){
 
 	function parseCurrencies(){
 
+		clientData.rates = [];
+		
+		var currencies = $('#button-rates .currency');
+		var rates = $('#button-rates .rate');
+
+		for (var i = 0; i < 3; i++) {
+			clientData.rates.push({currency : $(currencies[i]).text(), rate : $(rates[i]).text()});
+		}		
+
 	}
 
-	function parseCurrentAccounts(){
+	function parseCurrentAccounts(){		
+  		
+		clientData.currents = [];		
+  
+		$('li.current span.available.total').each(function(index, data){
+			var text = $(this).text().trim();
+			text = text.replace('\.', '');
+			text = text.replace('\,', '.');
+
+			var currency = text.substr(0, 3);
+
+			var amount = parseFloat(text.replace(currency, ''));
+			clientData.currents.push({currency:currency, amount: amount});
+			
+		});
+		
+	}
+
+	function parseDeposits(){
 
 		var amountEUR = 0;
 		var amountRON = 0;
@@ -37,11 +64,7 @@ var moro_PORTFOLIO = function(){
 		//amountEUR = amountEUR.toFixed(2);
 		//amountRON = amountRON.toFixed(2);		
 
-		console.log(clientData);		
-  		
-	}
-
-	function parseDeposits(){
+		console.log(clientData);
 
 	}
 
