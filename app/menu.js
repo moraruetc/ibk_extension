@@ -6,7 +6,38 @@ var moro_MENU = function(){
 		$.get(chrome.extension.getURL('templates/menu_element.tp'), function(template) {
      		option = _.template(template);
     		$('#menu').append(option);
+
+    		$('#moro_get_more').click(function(){
+    			$('#main').html('');
+    			$.get(chrome.extension.getURL('templates/get_more.tp'), function(template) {
+    				$('#main').html(template);
+
+var data = [
+    ['Heavy Industry', 12],['Retail', 9], ['Light Industry', 14],
+    ['Out of home', 16],['Commuting', 7], ['Orientation', 9]
+  ];
+  var plot1 = $.jqplot ('moro_chart1', [data],
+    {
+      seriesDefaults: {
+        // Make this a pie chart.
+        renderer: jQuery.jqplot.PieRenderer,
+        rendererOptions: {
+          // Put data labels on the pie slices.
+          // By default, labels show the percentage of the slice.
+          showDataLabels: true
+        }
+      },
+      legend: { show:true, location: 'e' }
+    }
+  );
+
+    				
+   				}, 'html');
+    		});
+
 		}, 'html');
+
+
 	}
 	
 	return {

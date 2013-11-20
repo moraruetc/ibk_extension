@@ -6,9 +6,13 @@
   "content_scripts": [
     {     
       "matches": ["https://www.raiffeisenonline.ro/*"],
-      "css": ["style/basic.css"],
+      "css": ["style/basic.css", 
+              "style/jquery.jqplot.min.css"],
       "js": ["libs/jquery2.js",
             "libs/underscore.js",
+            "libs/jquery.jqplot.min.js",
+            "libs/jqplot.pieRenderer.min.js",
+            "libs/jqplot.donutRenderer.min.js",
             "app/menu.js",
             "app/portfolio.js",
             "app/main.js"]
@@ -16,5 +20,6 @@
   ],
   "web_accessible_resources" : ["templates/menu_element.tp",
                                 "templates/portfolio_section.tp",
-                                "templates/portfolio_section_element.tp"]
+                                "templates/portfolio_section_element.tp",
+                                "templates/get_more.tp"]
 }
