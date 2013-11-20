@@ -1,7 +1,7 @@
 <% _.each(_.keys(totalDeposits), function(i) { %>
 
  <li class="time currency-RON non-clickable non-selectable">
-	<a href="#">&nbsp;<span></span><span class="product-name">Total <%=i%></span></a>	
+	<a href="#">&nbsp;<span>Total <%=i%></span><span class="product-name"></span></a>	
 	<span class="current total">&nbsp;</span>	
 	<span class="available total"><%=totalDeposits[i]%></span>	
 </li> 
