@@ -81,6 +81,7 @@ var moro_PORTFOLIO = function(){
 			parseCurrencies();
 			parseCurrentAccounts();
 			parseDeposits();
+			localStorage.setItem("clientData", JSON.stringify(clientData));
 		}, 
 
 		addTotals:function(){

@@ -1,11 +1,11 @@
 <div class="form-header selector-wrapper" tabindex="1">
-				<h2>Rapoarte Vizuale</h2>									
+				<h2>Raport depozite in valuta</h2>									
 </div>
 			
 <div id="moroDepositsTotals" style="height:300px; width:690px;"></div>		
 
 <div class="form-header selector-wrapper" tabindex="1">
-				<h2>Rapoarte Vizuale</h2>									
+				<h2></h2>									
 </div>
 
 			

@@ -28,22 +28,25 @@ var moro_MENU = function(){
 	}
 
 	function buildDepositsTotals(){
-		var data = [
-    ['Heavy Industry', 12],['Retail', 9]
-  ];
-  var plot1 = jQuery.jqplot ('moroDepositsTotals', [data],
-    {
-      seriesDefaults: {
 
-        renderer: jQuery.jqplot.PieRenderer,
-        rendererOptions: {
+		var clientData = JSON.parse(localStorage.getItem("clientData"));
 
-          showDataLabels: true
-        }
-      },
-      legend: { show:true, location: 'e' }
-    }
-  );
+		var data = [];
+
+		$.each(_.keys(clientData.totalDeposits), function(i, el){
+			data.push([el + ' : ' + clientData.totalDeposits[el], clientData.totalDeposits[el]]);
+		});
+		var plot1 = jQuery.jqplot ('moroDepositsTotals', [data],
+  		{
+     		seriesDefaults: {
+        		renderer: jQuery.jqplot.PieRenderer,
+        		rendererOptions: {
+          			showDataLabels: true
+        		}
+      		},
+      		legend: { show:true, location: 'e' }
+    	}
+  		);
 	}
 	
 	return {
