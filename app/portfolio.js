@@ -11,7 +11,7 @@ var moro_PORTFOLIO = function(){
 		var rates = $('#button-rates .rate');
 
 		for (var i = 0; i < 3; i++) {
-			clientData.rates.push({currency : $(currencies[i]).text(), rate : $(rates[i]).text()});
+			clientData.rates.push({currency : $(currencies[i]).text(), rate : parseFloat($(rates[i]).text().replace(',', '.'))});
 		}		
 
 	}

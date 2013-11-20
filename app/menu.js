@@ -34,7 +34,10 @@ var moro_MENU = function(){
 		var data = [];
 
 		$.each(_.keys(clientData.totalDeposits), function(i, el){
-			data.push([el + ' : ' + clientData.totalDeposits[el], clientData.totalDeposits[el]]);
+
+			var rate = getRate(el, clientData.rates);
+			var inRON = rate * clientData.totalDeposits[el];
+			data.push([el + ' : ' + clientData.totalDeposits[el], inRON]);
 		});
 		var plot1 = jQuery.jqplot ('moroDepositsTotals', [data],
   		{
@@ -47,6 +50,18 @@ var moro_MENU = function(){
       		legend: { show:true, location: 'e' }
     	}
   		);
+	}
+
+	function getRate(currency, rates){
+		if(currency === 'RON') return 1;
+		var rate = 1;
+		$.each(rates, function(i, r){
+			if(r.currency === currency){
+				rate = r.rate;
+			}
+		});
+
+		return rate;
 	}
 	
 	return {
