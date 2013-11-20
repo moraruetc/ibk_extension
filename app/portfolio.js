@@ -49,7 +49,7 @@ var moro_PORTFOLIO = function(){
 		$.when($.get(chrome.extension.getURL('templates/portfolio_section.tp')), $.get(chrome.extension.getURL('templates/portfolio_section_element.tp')))
 		.done(function(section, element){
 			$("#portfolio-accounts").append(section[0]);			
-			//$("#portfolio-accounts").append( _.template(element[0], clientData));
+			$("#portfolio-accounts").append( _.template(element[0], {totalDeposits : clientData.totalDeposits}));
 		});
 	}
 
